@@ -1,6 +1,5 @@
 import streamlit as st
 import joblib
-import base64
 from sklearn.preprocessing import StandardScaler
 st.set_page_config(page_title="House Price App",page_icon=":house:")
 video=f"""
@@ -58,7 +57,7 @@ df['hotwater_heating']=encoder.fit_transform(df.loc[:,'hotwaterheating'])
 df['air_conditioning'] =encoder.fit_transform(df.loc[:,'airconditioning'])
 df['pref_area']=encoder.fit_transform(df.loc[:,'prefarea'])
 df['furnishing_status']=encoder.fit_transform(df.loc[:,'furnishingstatus'])
-from sklearn.preprocessing import StandardScaler
+
 scaler=StandardScaler()
 scaler.fit(df.loc[:,['area','bedrooms','bathrooms','stories','main_road','guest_room','base_ment','hotwater_heating','air_conditioning','pref_area','parking','furnishing_status']])
 if st.button("Check"):
